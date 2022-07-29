@@ -7,9 +7,12 @@
 h1, h2 {
     font-family: 'Roboto', sans-serif;
 }
-.container {
+.page {
+    box-sizing: content-box;
     width: 100%;
     position: relative;
+    padding: 30px;
+    padding-top: 67px;
 }
 
 .pageTitle {

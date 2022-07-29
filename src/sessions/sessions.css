@@ -1,0 +1,25 @@
+
+.day {
+    margin-top: 40px;
+}
+.schedule {
+    margin-top: 20px;
+    width: 83px;
+    height: 43px;
+    color: #ffffff;
+    background-color: #E8833A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    gap: 20px;
+    
+}
+.schedule h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+.schedules {
+    display: flex;
+    gap: 20px;
+}

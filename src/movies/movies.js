@@ -2,6 +2,7 @@ import './movies.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Poster from '../poster/poster'
+import {Link} from 'react-router-dom'
 
 
 export default function Movies() {
@@ -23,7 +24,7 @@ export default function Movies() {
                 <h1>Selecione o filme</h1>
             </div>
             <div className="movies">
-                {posterURL.map((movie) => (<Poster posterURL={movie.posterURL} />))}
+                {posterURL.map((movie) => (<Link to={`/sessions/${movie.id}`}><Poster posterURL={movie.posterURL} key={movie.id} /></Link>))}
             </div>
         </>
     )

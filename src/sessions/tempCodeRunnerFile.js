@@ -1,0 +1,1 @@
+<Schedule day={data.weekday} date={data.date}
