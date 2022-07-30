@@ -1,0 +1,76 @@
+.seat {
+    width: 24px;
+    height: 24px;
+    border-radius: 20px;
+    background-color: #C3CFD9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px 7px;
+    border: #808F9D 1px solid;
+}
+
+.seat.occupied {
+    background-color: #FBE192;
+    border: 1px solid #F7C52B;
+
+}
+
+.seat.occupied.selected {
+    background-color: #8DD7CF;
+    border: 1px solid #1AAE9E;
+}
+
+.seatsMenu {
+    width: 380px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.seatsPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 02px;
+}
+
+.label {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label:first-of-type .seat {
+    background-color: #8DD7CF;
+    border: 1px solid #1AAE9E;
+}
+
+.label h3 {
+    font-size: 10px;
+}
+.button {
+    margin-top: 20px;
+    width: 225px;
+    height: 43px;
+    color: #ffffff;
+    background-color: #E8833A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.button h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+.seatsPage {
+    box-sizing: content-box;
+    padding-bottom: 117px;
+}
