@@ -9,7 +9,6 @@ import Footer from "./footer/footer";
 function App() {
 const [resume, setResume] = useState(null)
 const [schedule, setSchedule] = useState("")
-const [seats, setSeats] = useState("")
 console.log(schedule)
     return (
         <div className="page">

@@ -11,3 +11,19 @@
     font-family: 'Roboto', sans-serif;
     margin-bottom: 15px;
 }
+.button {
+    margin: auto;
+    margin-top: 20px;
+    width: 225px;
+    height: 43px;
+    color: #ffffff;
+    background-color: #E8833A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.button h2 {
+    font-size: 18px;
+    font-weight: 400;
+}

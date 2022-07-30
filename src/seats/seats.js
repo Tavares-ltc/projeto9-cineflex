@@ -3,10 +3,25 @@ import Form from '../form/form'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+let seatsNumbers = []
 
-function Seat({ seatNumber, isAvailable }) {
+function Seat({ seatNumber, isAvailable, seatID }) {
+    const [selected, setSelected] = useState("")
+    function select() {
+        if (isAvailable) {
+
+            if (seatsNumbers.includes(seatID)) {
+                setSelected("")
+                seatsNumbers = seatsNumbers.filter((value) => value !== seatID)
+            } else {
+                setSelected("selected")
+                seatsNumbers.push(seatID)
+            }
+        }
+            console.log(seatsNumbers)
+    }
     return (
-        <div className={(isAvailable) ? 'seat' : 'seat occupied'}>
+        <div className={(isAvailable) ? `seat ${selected}` : 'seat occupied'} onClick={select}>
             <h1>{seatNumber}</h1>
         </div>
     )
@@ -21,7 +36,7 @@ export default function Seats({ setResume, setSchedule }) {
         promise.then((object) => {
             setSeats(object.data.seats)
             setResume({posterURL: object.data.movie.posterURL, title: object.data.movie.title})
-            setSchedule({weekday: object.data.day.weekday, schedule: object.data.name})
+            setSchedule({weekday: object.data.day.weekday, schedule: object.data.name, date: object.data.day.date})
         })
     }, [])
     return (
@@ -30,7 +45,7 @@ export default function Seats({ setResume, setSchedule }) {
                 <h1>Selecione o horário</h1>
             </div>
             <div className='seatsMenu'>
-                {seats.map((seat) => (<Seat seatNumber={seat.name} isAvailable={seat.isAvailable} />))}
+                {seats.map((seat) => (<Seat seatNumber={seat.name} isAvailable={seat.isAvailable} seatID={seat.id} />))}
             </div>
             <div className='label-container'>
                 <div className='label'>
@@ -47,9 +62,7 @@ export default function Seats({ setResume, setSchedule }) {
                 </div>
             </div>
             <Form />
-            <div className='button'>
-                <h2>Reservar assentos</h2>
-            </div>
+            
         </div>
     )
 }

@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import './footer.css'
+
 export default function Footer ({posterURL, title, weekday, schedule}) {
     return (
         <div className='footer'>
