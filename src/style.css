@@ -8,7 +8,6 @@ h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
 }
 .page {
-    box-sizing: content-box;
     width: 100%;
     position: relative;
     padding: 30px;
@@ -28,6 +27,9 @@ h1, h2, h3 {
     font-size: 24px;
     font-weight: 400;
     
+}
+ html, body {
+    box-sizing: content-box;
 }
 
 

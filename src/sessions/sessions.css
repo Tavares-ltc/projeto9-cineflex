@@ -1,4 +1,6 @@
-
+a {
+    text-decoration: none;
+}
 .day {
     margin-top: 40px;
 }
@@ -24,5 +26,6 @@
     gap: 20px;
 }
 .sessionPage {
-    margin-bottom: 117px;
+    box-sizing: content-box;
+    padding-bottom: 150px;
 }

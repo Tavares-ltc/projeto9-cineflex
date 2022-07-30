@@ -1,8 +1,8 @@
 import './footer.css'
 
-export default function Footer ({posterURL, title, weekday, schedule}) {
+export default function Footer ({posterURL, title, weekday, schedule, display}) {
     return (
-        <div className='footer'>
+        <div className={`footer`}>
         <img src={posterURL}/>
         <div>
         <h1>{title}</h1>

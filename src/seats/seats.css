@@ -32,6 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 80vw;
 }
 
 .label-container {
@@ -56,10 +57,25 @@
     font-size: 10px;
 }
 
-.seatsPage {
-    box-sizing: content-box;
-    padding-bottom: 117px;
-}
 .seatsMenu .seat:hover {
+    cursor: pointer;
+}
+.button {
+    margin: auto;
+    margin-top: 20px;
+    width: 225px;
+    height: 43px;
+    color: #ffffff;
+    background-color: #E8833A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.button h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+.button:hover {
     cursor: pointer;
 }

@@ -1,0 +1,57 @@
+.successPage {
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.successPage div:first-of-type {
+    margin-bottom: 40px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.successPage div {
+    height: 100px;
+}
+.successPage h1 {
+    text-align: center;
+    font-size: 26px;
+    margin: 10px;
+    font-weight: 700;
+    color: #247A6B;
+    font-family: 'Roboto', sans-serif;
+}
+.successPage h2 {
+    font-weight: 700;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 4px;
+}
+
+.successPage .button {
+    margin: auto;
+    margin-top: 20px;
+    width: 225px;
+    height: 43px;
+    color: #ffffff;
+    background-color: #E8833A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.successPage .button h2 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+.successPage h3{
+    font-size: 19px;
+    font-family: 400;
+    font-family: 'Roboto', sans-serif;
+}
+.button:hover {
+    cursor: pointer;
+}

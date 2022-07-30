@@ -5,9 +5,10 @@ import { useParams, Link } from 'react-router-dom'
 
 
 
-export default function Sessions({setResume, setSchedule}) {
+export default function Sessions({setResume, setSchedule, setDisplay}) {
     const [sessions, setSessions] = useState([])
     const { movieID } = useParams()
+    setDisplay(true)
     
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${movieID}/showtimes`)

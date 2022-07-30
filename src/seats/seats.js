@@ -2,8 +2,9 @@ import './seats.css'
 import Form from '../form/form'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 let seatsNumbers = []
+let seatsNames = []
 
 function Seat({ seatNumber, isAvailable, seatID }) {
     const [selected, setSelected] = useState("")
@@ -17,8 +18,13 @@ function Seat({ seatNumber, isAvailable, seatID }) {
                 setSelected("selected")
                 seatsNumbers.push(seatID)
             }
+
+            if (seatsNames.includes(seatNumber)) {
+                seatsNames = seatsNames.filter((value) => value !== seatNumber)
+            } else {
+                seatsNames.push(seatNumber)
+            }
         }
-            console.log(seatsNumbers)
     }
     return (
         <div className={(isAvailable) ? `seat ${selected}` : 'seat occupied'} onClick={select}>
@@ -27,9 +33,12 @@ function Seat({ seatNumber, isAvailable, seatID }) {
     )
 }
 
-export default function Seats({ setResume, setSchedule }) {
+export default function Seats({ setResume, setSchedule, setName, setDocumentCPF, setSelectedSeats, setDisplay}) {
     const [seats, setSeats] = useState([])
     const { sessionID } = useParams()
+    const navigate = useNavigate()
+    setDisplay(true)
+    
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${sessionID}/seats`)
@@ -61,7 +70,13 @@ export default function Seats({ setResume, setSchedule }) {
                     <h3>Indisponivel</h3>
                 </div>
             </div>
-            <Form />
+            <Form setDocumentCPF={setDocumentCPF} setName={setName} />
+            <div className='button' onClick={()=> {if(seatsNumbers.length > 0) {
+                setDisplay(false)
+                navigate("/sucesso")
+                setSelectedSeats(seatsNames)}}}>
+                <h2>Reservar assentos</h2>
+            </div>
             
         </div>
     )
