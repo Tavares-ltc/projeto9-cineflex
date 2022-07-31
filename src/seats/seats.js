@@ -27,14 +27,25 @@ function Seat({ seatNumber, isAvailable, seatID }) {
             }
         }
     }
-    return (
-        <div className={(isAvailable) ? `seat ${selected}` : 'seat occupied'} onClick={select}>
-            <h1>{seatNumber}</h1>
-        </div>
-    )
+    if (isAvailable) {
+        return (
+            <div className={`seat ${selected}`} onClick={select}>
+                <h1>{seatNumber}</h1>
+            </div>
+        )
+    }
+    else {
+
+        return (
+
+            <div className='seat occupied' onClick={() => alert('Esse assento não está disponível')}>
+                <h1>{seatNumber}</h1>
+            </div>
+        )
+    }
 }
 
-export default function Seats({ name, documentCPF, setResume, setSchedule, setName, setDocumentCPF, setSelectedSeats, setDisplay }) {
+export default function Seats({ name, documentCPF, setResume, setSchedule, setName, setDocumentCPF, setSelectedSeats, setDisplay, setIsHomePage }) {
     const [seats, setSeats] = useState([])
     const { sessionID } = useParams()
     const navigate = useNavigate()
@@ -52,6 +63,13 @@ export default function Seats({ name, documentCPF, setResume, setSchedule, setNa
             setSeats(object.data.seats)
             setResume({ posterURL: object.data.movie.posterURL, title: object.data.movie.title })
             setSchedule({ weekday: object.data.day.weekday, schedule: object.data.name, date: object.data.day.date })
+            seatsNumbers = []
+            seatsNames = []
+            ticketOrdered = {}
+            setName("")
+            setDocumentCPF("")
+            setIsHomePage(false)
+
         })
     }, [])
 

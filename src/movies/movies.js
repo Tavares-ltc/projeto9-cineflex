@@ -5,7 +5,7 @@ import Poster from '../poster/poster'
 import {Link} from 'react-router-dom'
 
 
-export default function Movies({setResume, setDisplay}) {
+export default function Movies({setResume, setDisplay, setIsHomePage}) {
     const [movieData, setMovieData] = useState([])
     useEffect(() => {
         const promise = axios.get('https://mock-api.driven.com.br/api/v7/cineflex/movies');
@@ -13,6 +13,7 @@ export default function Movies({setResume, setDisplay}) {
         function listMovies(movies) {
             setMovieData(movies.data)
             setDisplay(false)
+            setIsHomePage(true)
         }
     }, []
     )

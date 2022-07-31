@@ -5,7 +5,7 @@ import { useParams, Link } from 'react-router-dom'
 
 
 
-export default function Sessions({setResume, setSchedule, setDisplay}) {
+export default function Sessions({setResume, setSchedule, setDisplay, setIsHomePage}) {
     const [sessions, setSessions] = useState([])
     const { movieID } = useParams()
     setDisplay(true)
@@ -15,6 +15,7 @@ export default function Sessions({setResume, setSchedule, setDisplay}) {
         promise.then((sessionSchedule) => {
             setSessions(sessionSchedule.data.days)
             setResume({posterURL: sessionSchedule.data.posterURL, title: sessionSchedule.data.title})
+            setIsHomePage(false)
         })
 
     }, [])
