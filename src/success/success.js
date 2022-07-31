@@ -1,7 +1,9 @@
 import './success.css'
+import { useNavigate } from 'react-router-dom'
 
-export default function SuccessPage({ title, schedule, date, name, documentCPF, selectedSeats, setDisplay}) {
+export default function SuccessPage({ title, schedule, date, name, documentCPF, selectedSeats, setDisplay, setResume, setSchedule, setName, setDocumentCPF}) {
 setDisplay(false)
+const navigate = useNavigate()
     if (schedule && name && documentCPF) {
         return (
             <div className='successPage'>
@@ -22,7 +24,7 @@ setDisplay(false)
                     <h3>Nome: {name}</h3>
                     <h3>CPF: {documentCPF}</h3>
                 </div>
-                <div className='button'>
+                <div className='button' onClick={returnHome}>
                     <h1>Voltar para a home</h1>
                 </div>
             </div>
@@ -33,6 +35,13 @@ setDisplay(false)
                 <h1>Tente novamente mais tarde.</h1>
             </div>
         )
+    }
+    function returnHome() {
+        setResume("")
+        setSchedule("")
+        setName("")
+        setDocumentCPF("")
+        navigate("/")
     }
 
 

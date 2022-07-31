@@ -4,15 +4,22 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+
 .successPage div:first-of-type {
     margin-bottom: 40px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
+
 .successPage div {
     height: 100px;
 }
+
+.successPage div:nth-of-type(3) {
+    min-height: 100px;
+}
+
 .successPage h1 {
     text-align: center;
     font-size: 26px;
@@ -21,6 +28,7 @@
     color: #247A6B;
     font-family: 'Roboto', sans-serif;
 }
+
 .successPage h2 {
     font-weight: 700;
     font-size: 20px;
@@ -33,7 +41,7 @@
     margin: auto;
     margin-top: 20px;
     width: 225px;
-    height: 43px;
+    max-height: 43px;
     color: #ffffff;
     background-color: #E8833A;
     display: flex;
@@ -42,16 +50,19 @@
     border-radius: 5px;
 }
 
-.successPage .button h2 {
+.successPage .button h1 {
     font-size: 18px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
-.successPage h3{
+
+.successPage h3 {
     font-size: 19px;
     font-family: 400;
     font-family: 'Roboto', sans-serif;
 }
+
 .button:hover {
     cursor: pointer;
 }

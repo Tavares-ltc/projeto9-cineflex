@@ -25,8 +25,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Movies setDisplay={setDisplay} setResume={setResume} />} />
                     <Route path="/sessions/:movieID" element={<Sessions setDisplay={setDisplay}  setResume={setResume} setSchedule={setSchedule} />} />
-                    <Route path="/assentos/:sessionID" element={<Seats  setSelectedSeats={setSelectedSeats} setResume={setResume} setSchedule={setSchedule} setDocumentCPF={setDocumentCPF} setName={setName} setDisplay={setDisplay} />} />
-                    <Route path="/sucesso" element={<SuccessPage setDisplay={setDisplay} title={resume.title} weekday={schedule.weekday} schedule={schedule.schedule} date={schedule.date} name={name} documentCPF={documentCPF} selectedSeats={selectedSeats}/>} />
+                    <Route path="/assentos/:sessionID" element={<Seats selectedSeats={selectedSeats} name={name} documentCPF={documentCPF}  setSelectedSeats={setSelectedSeats} setResume={setResume} setSchedule={setSchedule} setDocumentCPF={setDocumentCPF} setName={setName} setDisplay={setDisplay} />} />
+                    <Route path="/sucesso" element={<SuccessPage setDisplay={setDisplay} title={resume.title} weekday={schedule.weekday} schedule={schedule.schedule} date={schedule.date} name={name} documentCPF={documentCPF} selectedSeats={selectedSeats} setResume={setResume} setSchedule={setSchedule} setName={setName} setDocumentCPF={setDocumentCPF} />  } />
                 </Routes>
                 {(display) ? <Footer posterURL={resume.posterURL} title={resume.title} weekday={schedule.weekday} schedule={schedule.schedule} /> : ""}
             </BrowserRouter>
