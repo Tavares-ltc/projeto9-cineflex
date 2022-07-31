@@ -4,8 +4,9 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
-    margin-bottom: 140px;
     height: 100%;
+    padding-bottom: 130px;
+    padding-top: 50px;
 }
 .movies img {
     outline: 8px solid #ffffff;

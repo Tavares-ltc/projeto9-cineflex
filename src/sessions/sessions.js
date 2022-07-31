@@ -25,6 +25,7 @@ export default function Sessions({setResume, setSchedule, setDisplay}) {
             <div className="pageTitle">
                 <h1>Selecione o horário</h1>
             </div>
+            <div className='sessions-container'>  
             {sessions.map((session) => {
                 return (
                     <>
@@ -43,6 +44,7 @@ export default function Sessions({setResume, setSchedule, setDisplay}) {
                     </>
                 )
             })}
+             </div>
 
         </div>
     )

@@ -34,7 +34,7 @@ function Seat({ seatNumber, isAvailable, seatID }) {
     )
 }
 
-export default function Seats({ name, documentCPF, selectedSeats, setResume, setSchedule, setName, setDocumentCPF, setSelectedSeats, setDisplay }) {
+export default function Seats({ name, documentCPF, setResume, setSchedule, setName, setDocumentCPF, setSelectedSeats, setDisplay }) {
     const [seats, setSeats] = useState([])
     const { sessionID } = useParams()
     const navigate = useNavigate()
@@ -45,8 +45,6 @@ export default function Seats({ name, documentCPF, selectedSeats, setResume, set
         name,
         cpf: documentCPF
     }
-
-
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${sessionID}/seats`)
@@ -60,7 +58,7 @@ export default function Seats({ name, documentCPF, selectedSeats, setResume, set
     return (
         <div className='seatsPage'>
             <div className="pageTitle">
-                <h1>Selecione o horário</h1>
+                <h1>Selecione o(s) assento(s)</h1>
             </div>
             <div className='seatsMenu'>
                 {seats.map((seat) => (<Seat seatNumber={seat.name} isAvailable={seat.isAvailable} seatID={seat.id} />))}
@@ -81,11 +79,14 @@ export default function Seats({ name, documentCPF, selectedSeats, setResume, set
             </div>
             <Form setDocumentCPF={setDocumentCPF} setName={setName} />
             <div className='button' onClick={() => {
-                if (seatsNumbers.length > 0) {
+                if (seatsNumbers.length > 0 && name.length > 0 && (documentCPF.toString().length) === 11) {
                     setSelectedSeats(seatsNames)
                     axiosPostSeats()
                     setDisplay(false)
                     navigate("/sucesso")
+                }
+                else if (documentCPF.length < 11 || documentCPF > 11) {
+                    alert("Um número de CPF válido tem 11 digitos.")
                 }
             }}>
                 <h2>Reservar assentos</h2>

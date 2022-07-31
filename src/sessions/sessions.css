@@ -4,6 +4,9 @@ a {
 .day {
     margin-top: 40px;
 }
+.sessions-container {
+    margin-left: 60px;
+}
 .schedule {
     margin-top: 20px;
     width: 83px;
@@ -27,5 +30,6 @@ a {
 }
 .sessionPage {
     box-sizing: content-box;
-    padding-bottom: 150px;
+    padding-top: 70px;
+    padding-bottom: 130px;
 }

@@ -1,5 +1,7 @@
 .successPage {
-    height: 100vw;
+    padding-top: 70px;
+    padding-bottom: 130px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -14,6 +16,9 @@
 
 .successPage div {
     height: 100px;
+}
+.successPage h2, .successPage h3 {
+    margin-left: 40px;
 }
 
 .successPage div:nth-of-type(3) {
