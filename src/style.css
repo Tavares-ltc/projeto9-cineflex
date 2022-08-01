@@ -7,7 +7,8 @@
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -19,6 +20,7 @@ h3 {
     box-sizing: content-box;
     min-height: 100vh;
 }
+
 .pageTitle {
     width: 100%;
     height: 111px;
@@ -38,10 +40,11 @@ h3 {
 
 
 @media screen and (min-width: 680px) {
-.page {
-    width: 375px;
+    .page {
+        width: 375px;
+    }
 }
-}
+
 @media screen and (max-width: 680px) {
     .page {
         width: 100%;

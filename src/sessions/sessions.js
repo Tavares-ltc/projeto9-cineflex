@@ -19,7 +19,6 @@ export default function Sessions({setResume, setSchedule, setDisplay, setIsHomeP
         })
 
     }, [])
- console.log(sessions)
 
     return (
         <div className='sessionPage'>

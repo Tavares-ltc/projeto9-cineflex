@@ -12,16 +12,16 @@ useEffect(()=> {setIsHomePage(false)},[])
                 <div>
                     <h1>Pedido feito com sucesso!</h1>
                 </div>
-                <div>
+                <div className='container'>
                     <h2>Filme e sessão</h2>
                     <h3>{title}</h3>
                     <h3>{date} {schedule}</h3>
                 </div>
-                <div>
+                <div className='container'>
                     <h2>Ingressos</h2>
-                    {selectedSeats.map((seat) => <h3>Assento {seat}</h3>)}
+                    {selectedSeats.map((seat) => <h4>Assento {seat}</h4>)}
                 </div>
-                <div>
+                <div className='container'>
                     <h2>Comprador</h2>
                     <h3>Nome: {name}</h3>
                     <h3>CPF: {documentCPF}</h3>

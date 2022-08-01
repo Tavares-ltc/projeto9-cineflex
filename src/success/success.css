@@ -8,16 +8,19 @@
 }
 
 .successPage div:first-of-type {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
-
-.successPage div {
-    height: 100px;
+.successPage div:first-of-type {
+    height: 50px;
 }
-.successPage h2, .successPage h3 {
+
+.successPage .container {
+    min-height: 100px;
+}
+.successPage h2, .successPage h3, .successPage h4 {
     margin-left: 40px;
 }
 
@@ -41,6 +44,10 @@
     font-family: 'Roboto', sans-serif;
     margin-bottom: 4px;
 }
+.successPage h4:last-of-type{
+    margin-bottom: 30px;
+
+}
 
 .successPage .button {
     margin: auto;
@@ -62,7 +69,7 @@
     color: white;
 }
 
-.successPage h3 {
+.successPage h3, .successPage h4 {
     font-size: 19px;
     font-family: 400;
     font-family: 'Roboto', sans-serif;

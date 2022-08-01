@@ -16,10 +16,7 @@ function App() {
     const [display, setDisplay] = useState("")
     const [selectedSeats, setSelectedSeats] = useState("")
     const [isHomePage, setIsHomePage] = useState(true)
-    console.log(name, documentCPF)
-    console.log(display)
-
-    console.log(schedule)
+    
     return (
         <div className="page">
             <BrowserRouter>
